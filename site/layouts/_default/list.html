@@ -1,16 +1,29 @@
 {{ define "main" }}
 
-{{ partial "jumbotron" (dict "imageUrl" "/img/blog-index.jpg" "title" "Latest stories") }}
+<!-- サイドナビゲーション -->
 
-<div class="mw7 center">
-  <ul class="flex-ns flex-wrap mhn1-ns pa3">
+<div class="nav_wrap">
+    <div class="side_nav">
+      <div id="side" class="jacket">Jacket</div>
+      <div id="side" class="shirts">shirts</div>
+      <div id="side" class="knit">Knit</div>
+      <div id="side" class="sweats">Sweats</div>
+      <div id="side" class="pants">Pants</div>
+      <div id="side" class="lstee">L/S Tee</div>
+      <div id="side" class="sstee">S/S Tee</div>
+      <div id="side" class="caps">Caps</div>
+      <div id="side" class="shoes">Shoes</div>
+    </div>
+
+    <!-- ウェアボックス -->
+    <div class="container">
       {{ range (.Paginator 4).Pages.ByPublishDate.Reverse }}
-          <div class="w-50-ns ph1-ns flex">
-            {{ .Render "li"}}
-          </div>
+      {{ .Render "li"}}
       {{ end }}
-  </ul>
-  {{ partial "pagination" . }}
-</div>
+    </div>
+    {{ partial "pagination" . }}
+  </div>
+</body>
 
-{{end}}
+
+{{ end }}

@@ -1,6 +1,18 @@
-<a href="{{ .Permalink }}" class="no-underline pa3 bg-grey-1 br1 mb2 db raise w-100">
-	<h2 class="f3 b lh-title mb1 primary">{{ .Title }}</h2>
-	<p class="mid-gray lh-title mb2">{{ .Date.Format "Mon, Jan 2, 2006" }}</p>
-	<p class="mb0">{{ .Description }}</p>
-	<p class="link b dib black mb0">Read more →</p>
-</a>
+<div class="item">
+  <div class="pics">
+    <a class="item_detail_page" href="{{ .Permalink }}">
+      <img class="item_pic" src="{{ .Params.image }}" alt="" />
+    </a>
+  </div>
+  <div class="item_price">
+    <div id="price_wrap" class="rent">
+      <p class="tag">RENT</p>
+      <p class="price_tag">¥{{ .Params.Rent }}</p>
+    </div>
+
+    <div id="price_wrap" class="buy">
+      <p class="tag">BUY</p>
+      <p class="price_tag">¥{{ .Params.Buy }}</p>
+    </div>
+  </div>
+</div>
