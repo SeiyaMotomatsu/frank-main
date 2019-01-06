@@ -340,3 +340,14 @@ select {
   text-align: center;
   line-height: 40px;
 }
+
+/* footer */
+
+.footer {
+}
+
+.footer_ttl {
+  font-size: 30px;
+  font-weight: bold;
+  color: #555555;
+}
