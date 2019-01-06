@@ -1,0 +1,78 @@
+{{ define "main" }}
+<div class="container_detail">
+  <div class="nav_wrap">
+    <div class="side_nav">
+      <div id="side" class="jacket">Jacket</div>
+      <div id="side" class="shirts">shirts</div>
+      <div id="side" class="knit">Knit</div>
+      <div id="side" class="sweats">Sweats</div>
+      <div id="side" class="pants">Pants</div>
+      <div id="side" class="lstee">L/S Tee</div>
+      <div id="side" class="sstee">S/S Tee</div>
+      <div id="side" class="caps">Caps</div>
+      <div id="side" class="shoes">Shoes</div>
+    </div>
+  </div>
+
+  <!-- detail -->
+
+  <div class="container_section">
+    <form action="">
+      <div class="item_detail">
+        <div class="item_pics">
+          <img class="wear_item_pic" src="/img/j1.jpg" alt="" />
+        </div>
+        <div class="name_detail">
+          <h2 class="ttl">DETROIT JACKET</h2>
+          <h3 class="name_jpn">デトロイトジャケット</h3>
+          <div class="detail_price">
+            <div class="rent_text">
+              <p>
+                RENT <br />
+                ¥3,240 <span class="tax">(tax in)</span>
+              </p>
+            </div>
+            <div class="buy_taxt">
+              <p>
+                BUY <br />
+                ¥32,400<span class="tax">(tax in)</span>
+              </p>
+            </div>
+          </div>
+          <div class="select_wrap">
+            <h5>Color</h5>
+            <select name="color" class="select_box" id="">
+              <option label="select" value="">Select</option>
+              <option label="navy" value="">Navy</option>
+              <option label="olive" value="">Olive</option>
+              <option label="black" value="">Black</option>
+              <option label="white" value="">White</option>
+            </select>
+          </div>
+          <div class="select_wrap">
+            <h5>Size</h5>
+            <select name="size" class="select_box" id="">
+              <option label="select" value="">Select</option>
+              <option label="S" value="">S</option>
+              <option label="M" value="">M</option>
+              <option label="L" value="">L</option>
+              <option label="XL" value="">XL</option>
+            </select>
+          </div>
+          <div class="quantity">
+            <h5>Count</h5>
+            <input type="text" class="count" value="1" maxlength="5" />
+          </div>
+
+          <div class="wear_btn_wrap">
+            <div class="wear_btn"><a href="">RENT</a></div>
+
+            <div class="wear_btn"><a href="">BUY</a></div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+{{ end }}

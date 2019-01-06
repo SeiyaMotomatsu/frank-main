@@ -38,6 +38,10 @@ body {
     display: flex;
   } */
 
+a {
+  text-decoration: none;
+}
+
 a:visited {
   color: #555555;
 }
@@ -69,8 +73,270 @@ nav li.login {
 }
 
 .toppic {
-  background: url("/img/top_sample.jpg") no-repeat center center;
   width: 100%;
-  height: 500px;
+  height: 600px;
+}
+
+.top_sample {
+  object-fit: cover;
+  width: 100%;
+  height: 600px;
+}
+
+#slideArea li {
+  height: 600px;
+  width: auto;
+  display: none;
+}
+
+/* hotel.html */
+
+/* .hotels {
+  height: 150px;
+  width: auto;
+  margin-left: 200px;
+  margin-top: 100px;
+  background: #aaa;
+  display: flex;
+  justify-content: left;
+}
+
+.hotels_pics {
+  height: 150px;
+  width: 200px;
+  background: url(/dist/img/hotel_sample.jpg) no-repeat center;
+  background-size: center;
+}
+
+.hotel_sample {
+  object-fit: cover;
+  height: 100%;
+  width: 100%; */
+/* } */
+
+.hotels {
+  height: 130px;
+  width: 900px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid #eee;
+  display: flex;
+  justify-content: left;
+}
+
+.hotels_pics {
+  height: 124px;
+  width: 200px;
+  background: url("/img/hotel_sample.jpg") no-repeat center;
   background-size: cover;
+}
+
+.di {
+  height: 130px;
+  width: 300px;
+  margin-left: 100px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.hotels_name {
+  margin: 30px 0px 20px;
+  font-size: 25px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.fukuoka {
+  margin: 10px 67px;
+}
+
+.price {
+  height: 130px;
+  width: 200px;
+  text-align: center;
+}
+
+.reserve {
+  margin-top: 35px;
+  margin-bottom: 2px;
+}
+
+.reserve_btn_wrap {
+  height: 130px;
+  width: 200px;
+  text-align: center;
+}
+
+.reserve_btn {
+  margin-top: 40px;
+  height: 50px;
+  width: 100px;
+  border: solid #555555;
+}
+
+/* wear.html */
+
+/* sideNav */
+
+.side_nav {
+  color: #555555;
+  height: 600px;
+  width: 150px;
+  border: solid #eee;
+  border-left: none;
+  float: left;
+}
+
+#side {
+  padding: 15px 10px;
+  font-size: 18px;
+}
+
+.container {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.item {
+  width: 300px;
+  height: 300px;
+  border: solid #eee;
+  margin: 20px 20px;
+}
+
+.pics {
+  text-align: center;
+}
+
+.item_pic {
+  height: 200px;
+  width: 200px;
+  margin-top: 20px;
+}
+
+.item_price {
+  height: 50px;
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+#price_wrap {
+  height: 50px;
+  width: 100px;
+  border: solid #eee;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.tag {
+  font-size: 3px;
+  margin-bottom: 0.5px;
+}
+
+/* wear_detail.html */
+
+.container_section {
+  height: 740px;
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.item_detail {
+  height: 740px;
+  width: 1000px;
+  display: flex;
+  margin-left: 50px;
+}
+
+.item_pics {
+  height: 600px;
+  width: 600px;
+}
+
+.wear_item_pic {
+  height: 600px;
+  width: 600px;
+}
+
+.container_detail {
+  display: flex;
+}
+.name_detail {
+  height: 550px;
+  width: 400px;
+  color: #555555;
+  margin-top: 50px;
+}
+
+.ttl {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.detail_price {
+  height: 80px;
+  width: 400px;
+  margin-top: 20px;
+
+  display: flex;
+  align-content: center;
+}
+
+.tax {
+  font-size: 10px;
+}
+
+.buy_taxt {
+  margin-left: 50px;
+}
+
+.select_wrap {
+  margin-bottom: 10px;
+}
+
+.select_box {
+  width: 100%;
+  height: 30px;
+  font-size: 11px;
+  border: 1px solid #ccc;
+}
+select {
+  outline: none;
+}
+
+.count {
+  height: 30px;
+  width: 30px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.wear_btn_wrap {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.wear_btn {
+  font-weight: bold;
+  color: #eee;
+  height: 40px;
+  width: 180px;
+  border-radius: 5px;
+  background-color: #aaa;
+  text-align: center;
+  line-height: 40px;
 }
