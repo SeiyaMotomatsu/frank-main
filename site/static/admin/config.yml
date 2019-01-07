@@ -12,8 +12,8 @@ collections: # A list of collections the CMS should be able to edit
     fields: # The fields each document in this collection have
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Jptitle", name: "jptitle", widget: "string" }
-       { label: "brandname", name: "brandname", widget: "string" }
-       { label: "storename", name: "storename", widget: "string" }
+      - { label: "brandname", name: "brandname", widget: "string" }
+      - { label: "storename", name: "storename", widget: "string" }
       - { label: "Image", name: "image", widget: "image", required: false }
       - { label: "Buy", name: "buy", widget: "string" }
       - { label: "Rent", name: "rent", widget: "strig" }
