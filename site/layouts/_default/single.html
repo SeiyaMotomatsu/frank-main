@@ -9,8 +9,16 @@
           <img class="wear_item_pic" src="{{ .Params.image }}" alt="" />
         </div>
         <div class="name_detail">
-          <h2 class="ttl">{{ .Title }}</h2>
+          <h3 class="ttl">{{ .Title }}</h3>
           <h3 class="name_jpn">{{ .Params.Jptitle }}</h3>
+          <div class="brand_store_name">
+            <h4>
+              Brand: <a class="brand-name"> {{ .Params.brandname }}</a>
+            </h4>
+            <h4>
+              Store: <a class="store-name"> {{ .Params.storename }}</a>
+            </h4>
+          </div>
           <div class="detail_price">
             <div class="rent_text">
               <p>

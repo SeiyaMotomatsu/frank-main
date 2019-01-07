@@ -250,6 +250,7 @@ nav li.login {
   width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 30px;
 }
 
 .item_detail {
@@ -261,7 +262,8 @@ nav li.login {
 
 .item_pics {
   height: 600px;
-  width: 600px;
+  width: 500px;
+  margin-left: 50px;
 }
 
 .wear_item_pic {
@@ -276,14 +278,20 @@ nav li.login {
   height: 550px;
   width: 400px;
   color: #555555;
-  margin-top: 50px;
+  margin-left: 30px;
 }
 
 .ttl {
-  font-size: 30px;
+  font-size: 35px;
   font-weight: 700;
+  line-height: 30px;
+  margin-bottom: 0px;
 }
 
+.brand_store_name {
+  margin-top: 10px;
+  font-size: 18px;
+}
 .detail_price {
   height: 80px;
   width: 400px;
@@ -317,9 +325,11 @@ select {
 
 .count {
   height: 30px;
-  width: 30px;
+  width: 60px;
   border: 1px solid #ccc;
   outline: none;
+  font-size: 15px;
+  text-align: left;
 }
 
 .wear_btn_wrap {
@@ -344,6 +354,7 @@ select {
 /* footer */
 
 .footer {
+  margin-top: 300px;
 }
 
 .footer_ttl {
@@ -355,7 +366,7 @@ select {
 .footer_wrap {
   max-width: 1100px;
   max-height: 500px;
-  border: solid #aaa;
+  border: solid #eee;
   margin-left: auto;
   margin-right: auto;
 }
