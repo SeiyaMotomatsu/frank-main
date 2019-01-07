@@ -16,4 +16,4 @@ collections: # A list of collections the CMS should be able to edit
       - { label: "storename", name: "storename", widget: "string" }
       - { label: "Image", name: "image", widget: "image", required: false }
       - { label: "Buy", name: "buy", widget: "string" }
-      - { label: "Rent", name: "rent", widget: "strig" }
+      - { label: "Rent", name: "rent", widget: "string" }
