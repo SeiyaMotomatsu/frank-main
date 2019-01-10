@@ -1,10 +1,12 @@
 ---
-title: jacketfvv
-jptitle: vfmv
-brandname: ',vlfb;'
-storename: ',xcvplbb;g'
+title: Wool Trench Coat
+jptitle: ウールトレンチコート
+brandname: Supreme
+storename: Supreme Fukuoka
 image: /img/m.jpg
-buy: '6,000'
-rent: '7,000'
+image2: /img/wool2.jpg
+image3: /img/wool3.jpg
+buy: '100,000'
+rent: '10,000'
 ---
 
