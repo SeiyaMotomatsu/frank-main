@@ -412,9 +412,9 @@ nav li.login {
   margin-left: 10px;
 }
 
-.item_pic img {
-  height: 500px;
-  width: 600px;
+.item_pics_big img {
+  height: 600px;
+  width: 550px;
 }
 
 /* small画面 */
