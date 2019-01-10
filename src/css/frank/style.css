@@ -539,6 +539,10 @@ select {
   margin-right: auto;
 }
 
+.db path {
+  fill: #555;
+}
+
 /* 
 store.html */
 
