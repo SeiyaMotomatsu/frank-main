@@ -345,7 +345,7 @@ nav li.login {
   padding-left: 30px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
 
 .item {
