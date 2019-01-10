@@ -1,6 +1,8 @@
 ---
-title: dfbb
+title: Pants
 jptitle: 古着
+brandname: Carhartt
+storename: Carhartt Fukuoka
 image: /img/p1.jpg
 buy: '18,000'
 rent: '3,000'
