@@ -1,7 +1,15 @@
-{{ define "main" }}
+<!DOCTYPE html>
+<html lang="en">
+  {{ partial "head" . }}
+  <body class="sans-serif">
+    {{ partial "start" . }}
 
-{{ partial "jumbotron" (dict "imageUrl" .Params.image "title" .Title "subtitle" .Params.subtitle) }}
+    {{ partial "nav" . }}
 
-{{ partial "short-text" .Params.blurb}}
+    {{ partial "jumbotron" (dict "imageUrl" .Params.image "title" .Title "subtitle" .Params.subtitle) }}
 
-{{ end }}
+    {{ partial "how_frank" .Params.blurb}}
+
+    {{ partial "footer" . }}
+  </body>
+</html>

@@ -3,6 +3,61 @@ body {
     "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
   line-height: 1.75;
   font-size: 16px;
+  margin: 0;
+  height: 100%;
+}
+
+/* start.html */
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.window {
+  opacity: 1;
+  position: fixed;
+  z-index: 5;
+  background: #555;
+  height: 100%;
+  width: 100%;
+  animation: fadeOut 0.4s ease-in-out 1.3s forwards;
+}
+
+#demo_2 {
+  height: 600px;
+  width: 100%;
+}
+
+/* h1 {
+text-align: center;
+font-family: "Source Sans Pro", sans-serif;
+font-style: italic;
+font-weight: 1500; 
+height: 200px;
+width: 500px;
+color: #eee;
+}  */
+
+#svg_1 {
+  display: flex; /* 変更なし */
+  align-items: flex-start; /* 変更なし */
+  width: 235px; /* 変更なし */
+  height: 115px; /* 変更なし */
+  transition: opacity 0.3s ease-out;
+}
+
+polygon,
+path {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 2;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
 }
 
 /*　パディングをサイズ内側にする処理　*/
@@ -89,6 +144,82 @@ nav li.login {
   display: none;
 }
 
+/* how_frank.html */
+/* #fadeIn {
+  opacity: 0;
+}
+.mv02 {
+  opacity: 1;
+} */
+
+.how-window {
+  width: 100%;
+  height: 100%;
+  font-style: italic;
+}
+
+.how_frank {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+}
+
+.how {
+  height: 60px;
+  max-width: 500px;
+  margin-left: 200px;
+  font-size: 50px;
+  font-weight: 800;
+}
+
+.how_op {
+  height: 60px;
+  max-width: 500px;
+  margin-left: 100px;
+  padding-top: 20px;
+}
+
+.how_1 {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.how_1_op {
+  max-width: 500px;
+  /* margin-left: 100px; */
+}
+.how_1_op h1 {
+  font-weight: 900;
+}
+
+.how_1_op h3 {
+  font-size: 17px;
+}
+
+.how_1_img {
+  max-width: 500px;
+  /* margin-left: 200px; */
+}
+
+.how_2 {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.how_2_img {
+  max-width: 500px;
+  /* margin-right: 100px; */
+}
+
 /* hotel.html */
 
 /* .hotels {
@@ -123,6 +254,7 @@ nav li.login {
   border: solid #eee;
   display: flex;
   justify-content: left;
+  color: #333;
 }
 
 .hotels_pics {
@@ -135,17 +267,24 @@ nav li.login {
 .di {
   height: 130px;
   width: 300px;
-  margin-left: 100px;
+  margin-left: 60px;
   text-align: center;
   display: flex;
   flex-direction: column;
 }
 
 .hotels_name {
-  margin: 30px 0px 20px;
+  margin: 35px 35px 20px;
+  max-width: 300px;
   font-size: 25px;
   font-family: "Roboto", sans-serif;
   font-weight: 900;
+  font-style: italic;
+  line-height: 20px;
+}
+
+.access {
+  font-size: 12px;
   font-style: italic;
 }
 
@@ -174,20 +313,25 @@ nav li.login {
   margin-top: 40px;
   height: 50px;
   width: 100px;
-  border: solid #555555;
+  border: solid #eee;
 }
 
 /* wear.html */
 
 /* sideNav */
 
+.nav_wrap {
+  display: flex;
+}
+
 .side_nav {
+  flex: 0;
+  flex-basis: 150px;
+  width: 150px;
   color: #555555;
   height: 600px;
-  width: 150px;
   border: solid #eee;
   border-left: none;
-  float: left;
 }
 
 #side {
@@ -196,7 +340,9 @@ nav li.login {
 }
 
 .container {
-  margin-top: 50px;
+  max-width: 1500px;
+  margin-top: -20px;
+  padding-left: 30px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -261,14 +407,36 @@ nav li.login {
 }
 
 .item_pics {
-  height: 600px;
-  width: 500px;
-  margin-left: 50px;
+  height: 500px;
+  width: 600px;
+  margin-left: 10px;
 }
 
-.wear_item_pic {
-  height: 600px;
+.item_pic img {
+  height: 500px;
   width: 600px;
+}
+
+/* small画面 */
+.item_pic_small {
+  width: 600px;
+  height: 100px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.item_pic_small img {
+  widows: 50px;
+  height: 50px;
+  margin-left: 10px;
+}
+
+.item_pics .wear-image-big {
+  display: none;
+}
+
+.item_pics .wear-image-big.active {
+  display: block;
 }
 
 .container_detail {
@@ -354,7 +522,7 @@ select {
 /* footer */
 
 .footer {
-  margin-top: 300px;
+  margin-top: 20px;
 }
 
 .footer_ttl {
@@ -369,4 +537,91 @@ select {
   border: solid #eee;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* 
+store.html */
+
+button:hover {
+  color: #aaa;
+  background-color: #eee;
+}
+.store {
+  height: 130px;
+  width: 900px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid #eee;
+  display: flex;
+  justify-content: left;
+  color: #333;
+}
+
+.store_pics {
+  height: 124px;
+  width: 200px;
+  background: url("/img/store_sample.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.Brands_wrap {
+  height: 130px;
+  width: 200px;
+  text-align: center;
+  display: table;
+}
+
+.outer {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.brands {
+  font-weight: 700;
+}
+
+/* store_detail.html */
+
+.store_detail_pics {
+  max-width: 600px;
+  max-height: 400px;
+}
+
+.map_btn {
+  font-weight: bold;
+  color: #eee;
+  height: 40px;
+  width: 180px;
+  border-radius: 5px;
+  margin-top: 20px;
+  background-color: #aaa;
+  text-align: center;
+  line-height: 40px;
+}
+
+.store_detail {
+  height: 400px;
+  width: 100%;
+  display: flex;
+  margin-left: 100px;
+  margin-bottom: 50px;
+}
+
+.map {
+  width: 100%;
+  height: 450px;
+  margin-left: 100px;
+}
+
+.map_btn:hover {
+  color: #555555;
+}
+
+.store_container_section {
+  height: 500px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
 }

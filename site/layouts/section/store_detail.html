@@ -1,0 +1,75 @@
+{{ define "main" }}
+
+<script
+  async
+  defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbELNHi8VpKjbVnCN61e1UcgI-rU8f1Yk"
+></script>
+
+<div class="store_container_section">
+  <form action="">
+    <div class="store_detail">
+      <div class="store_detail_pics">
+        <img class="store_img" src="/img/store_sample.jpg" alt="" />
+      </div>
+      <div class="name_detail">
+        <h3 class="ttl">FRANK STORE</h3>
+        <h3 class="name_jpn">フランクストア</h3>
+        <div class="brand_store_name">
+          <h4>
+            Brand: <a class="brand-name"> FRANK Garment / Devourfilms,etc</a>
+          </h4>
+
+          <h4>
+            Open:10:00~<br />
+            Close:~20:00
+          </h4>
+          <h4>TEL:092-333-1111</h4>
+        </div>
+
+        <div class="quantity">
+          <h4>
+            HP:
+            <a href="https://frank-works.netlify.com">
+              https://frank-works.netlify.com</a
+            >
+          </h4>
+        </div>
+        <div class="store_accese_wrap">
+          <div class="store_accese">
+            <h4>
+              Accese <br />
+              福岡市中央区大名2-X-X
+            </h4>
+          </div>
+          <div id="map_btn" class="map_btn">Map</div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <div id="map" class="map">
+    <iframe
+      id="google_map"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6647.38208261826!2d130.391881347204!3d33.58737023765456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd5e535b27b5236c6!2sG&#39;s+ACADEMY+FUKUOKA!5e0!3m2!1sja!2sjp!4v1547103447534"
+      width="1000"
+      height="450"
+      frameborder="0"
+      style="border:0"
+      allowfullscreen
+    ></iframe>
+  </div>
+</div>
+
+<script>
+  $(function() {
+    $("#map").hide();
+  });
+
+  $("#map_btn").click(function() {
+    $("#map").show();
+    $(".store_container_section").css("height", "900px");
+  });
+</script>
+
+{{ end }}

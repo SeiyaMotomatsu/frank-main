@@ -2,6 +2,10 @@
 <html lang="en">
   {{ partial "head" . }}
   <body class="sans-serif">
-    {{ partial "nav" . }} {{ block "main" . }}{{ end }} {{ partial "footer" . }}
+    {{ partial "nav" . }}
+
+    {{ partial "how_frank" .Params.blurb}}
+
+    {{ partial "footer" . }}
   </body>
 </html>
