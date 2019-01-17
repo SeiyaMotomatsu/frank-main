@@ -7,30 +7,30 @@
       <div class="item_detail">
         <div class="item_pics">
           <div class="item_pics_big">
-          {{ if .Params.image }}
-          <img
-            id="big_1"
-            class="wear-image-big active"
-            src="{{ .Params.image }}"
-            alt=""
-          />
-          {{ end }} {{ if .Params.image2 }}
-          <img
-            id="big_2"
-            class="wear-image-big"
-            src="{{ .Params.image2 }}"
-            alt=""
-          />
-          {{ end }}{{ if .Params.image3 }}
-          <img
-            id="big_3"
-            class="wear-image-big"
-            src="{{ .Params.image3 }}"
-            alt=""
-          />
-          {{ end }}
-        </div>
-        
+            {{ if .Params.image }}
+            <img
+              id="big_1"
+              class="wear-image-big active"
+              src="{{ .Params.image }}"
+              alt=""
+            />
+            {{ end }} {{ if .Params.image2 }}
+            <img
+              id="big_2"
+              class="wear-image-big"
+              src="{{ .Params.image2 }}"
+              alt=""
+            />
+            {{ end }}{{ if .Params.image3 }}
+            <img
+              id="big_3"
+              class="wear-image-big"
+              src="{{ .Params.image3 }}"
+              alt=""
+            />
+            {{ end }}
+          </div>
+
           <div class="item_pic_small">
             {{ if .Params.image }}
             <img
@@ -106,8 +106,8 @@
             <input type="number" class="count" value="1" maxlength="5" />
           </div>
           <div class="wear_btn_wrap">
-            <div class="wear_btn"><a href="">RENT</a></div>
-            <div class="wear_btn"><a href="">BUY</a></div>
+            <div class="wear_btn" id="rent_btn"><a href="">RENT</a></div>
+            <div class="wear_btn" id="buy_btn"><a href="">BUY</a></div>
           </div>
         </div>
       </div>
@@ -117,12 +117,25 @@
 
 <script>
   $(function() {
-    $(".wear-image-small").hover(function() {
-      $(".wear-image-big").hide();
-      var idNum = $(this)[0].id.replace("small_", ""); // 数字だけ
-      $("#big_" + idNum).show();
+    var userId = "";
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        userId = user.uid;
+        // User is signed in.
+      } else {
+        $(".wear_btn").css({ opacity: 0.3 });
+        // No user is signed in.
+      }
     });
   });
+
+  $(".wear-image-small").hover(function() {
+    $(".wear-image-big").hide();
+    var idNum = $(this)[0].id.replace("small_", ""); // 数字だけ
+    $("#big_" + idNum).show();
+  });
+
+  $("#rent_btn").click(function() {});
 </script>
 
 {{ end }}

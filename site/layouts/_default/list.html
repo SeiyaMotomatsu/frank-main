@@ -5,11 +5,13 @@
 <div class="nav_wrap">
   {{ partial "sidenav" . }}
   <!-- ウェアボックス -->
-  <div class="container">
-    {{ range (.Paginator 4).Pages.ByPublishDate.Reverse }} {{ .Render "li"}}
-    {{ end }}
+  <div>
+    <div class="container">
+      {{ range (.Paginate (.Pages.ByPublishDate.Reverse) 10).Pages -}}
+      {{ .Render "li"}} {{ end }}
+    </div>
+    {{ partial "pagination" . }}
   </div>
-  {{ partial "pagination" . }}
 </div>
 
 {{ end }}
