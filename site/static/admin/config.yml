@@ -9,6 +9,7 @@ collections: # A list of collections the CMS should be able to edit
     label: "Wear" # Used in the UI, ie.: "New Post"
     folder: "site/content/wear" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{hour}}-{{minute}}-{{slug}}"
     fields: # The fields each document in this collection have
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Jptitle", name: "jptitle", widget: "string" }
