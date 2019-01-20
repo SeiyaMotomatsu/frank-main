@@ -84,11 +84,9 @@
           <div class="select_wrap">
             <h5>Color</h5>
             <select name="color" class="select_box" id="wear_color">
-              {{ range .Params.colors -}}
-              <option label="{{ . }}" value="">{{ . }}</option>
-              {{
-                end
-              }}
+              {{ range $elem_val := .Params.colors }}
+              <option label="{{ $elem_val }}" value="">{{ $elem_val }}</option>
+              {{ end -}}
             </select>
           </div>
           <div class="select_wrap">
