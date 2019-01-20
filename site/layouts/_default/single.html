@@ -83,12 +83,12 @@
           </div>
           <div class="select_wrap">
             <h5>Color</h5>
-            <select name="color" class="select_box" id="">
-              <option label="select" value="">Select</option>
-              <option label="navy" value="">Navy</option>
-              <option label="olive" value="">Olive</option>
-              <option label="black" value="">Black</option>
-              <option label="white" value="">White</option>
+            <select name="color" class="select_box" id="wear_color">
+              {{ range .Params.colors -}}
+              <option label="{{ . }}" value="">{{ . }}</option>
+              {{
+                end
+              }}
             </select>
           </div>
           <div class="select_wrap">
@@ -106,7 +106,7 @@
             <input type="number" class="count" value="1" maxlength="5" />
           </div>
           <div class="wear_btn_wrap">
-            <div class="wear_btn" id="rent_btn"><a href="">RENT</a></div>
+            <div class="wear_btn" id="rent_btn"><a href="#">RENT</a></div>
             <div class="wear_btn" id="buy_btn"><a href="">BUY</a></div>
           </div>
         </div>
@@ -116,6 +116,10 @@
 </div>
 
 <script>
+  var db = firebase.firestore();
+  var settings = { timestampsInSnapshots: true };
+  db.settings(settings);
+
   $(function() {
     var userId = "";
     firebase.auth().onAuthStateChanged(function(user) {
@@ -127,15 +131,26 @@
         // No user is signed in.
       }
     });
-  });
 
-  $(".wear-image-small").hover(function() {
-    $(".wear-image-big").hide();
-    var idNum = $(this)[0].id.replace("small_", ""); // 数字だけ
-    $("#big_" + idNum).show();
-  });
+    $(".wear-image-small").hover(function() {
+      $(".wear-image-big").hide();
+      var idNum = $(this)[0].id.replace("small_", ""); // 数字だけ
+      $("#big_" + idNum).show();
+    });
 
-  $("#rent_btn").click(function() {});
+    $("#rent_btn").click(function() {
+      var wearRef = db
+        .collection("users")
+        .doc(userId)
+        .collection("wears")
+        .doc("{{ .File.BaseFileName }}");
+
+      wearRef.set({
+        color: "navy",
+        size: "L"
+      });
+    });
+  });
 </script>
 
 {{ end }}
