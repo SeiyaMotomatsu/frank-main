@@ -8,4 +8,34 @@
   {{ partial "pagination" . }}
 </div>
 
+<script>
+  var db = firebase.firestore();
+  var settings = { timestampsInSnapshots: true };
+  db.settings(settings);
+
+  $(function() {
+    var userId = "";
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        userId = user.uid;
+        // User is signed in.
+      } else {
+        $(".reserve_btn").css({ opacity: 0.3 });
+        // No user is signed in.
+      }
+    });
+    $(".reserve_btn").click(function() {
+      var current_id = $(this)[0].id.replace("reserve_btn-", "");
+      var hotelRef = db
+        .collection("users")
+        .doc(userId)
+        .collection("hotels")
+        .doc(current_id);
+
+      hotelRef.set({
+        booked: true
+      });
+    });
+  });
+</script>
 {{ end }}
