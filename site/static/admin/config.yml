@@ -20,4 +20,9 @@ collections: # A list of collections the CMS should be able to edit
       - { label: "Image3", name: "image3", widget: "image", required: false }
       - { label: "Buy", name: "buy", widget: "string" }
       - { label: "Rent", name: "rent", widget: "string" }
-      - { label: "Colors", name: "colors", widget: "list" }
+      - {
+          label: "Colors",
+          name: "colors",
+          widget: "list",
+          field: { label: Color, name: color, widget: string },
+        }
