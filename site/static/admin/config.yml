@@ -31,5 +31,6 @@ collections: # A list of collections the CMS should be able to edit
           label: "sizes",
           name: "sizes",
           widget: "list",
+          default: ["S", "M", "L"],
           field: { label: size, name: size, widget: string },
         }
