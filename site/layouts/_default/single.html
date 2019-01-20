@@ -84,19 +84,17 @@
           <div class="select_wrap">
             <h5>Color</h5>
             <select name="color" class="select_box" id="wear_color">
-              {{ range $elem_val := .Params.colors }}
-              <option label="{{ $elem_val }}" value="">{{ $elem_val }}</option>
+              {{ range $color := .Params.colors }}
+              <option label="{{ $color }}" value="">{{ $color }}</option>
               {{ end -}}
             </select>
           </div>
           <div class="select_wrap">
             <h5>Size</h5>
-            <select name="size" class="select_box" id="">
-              <option label="select" value="">Select</option>
-              <option label="S" value="">S</option>
-              <option label="M" value="">M</option>
-              <option label="L" value="">L</option>
-              <option label="XL" value="">XL</option>
+            <select name="size" class="select_box" id="wear_size">
+              {{ range $size := .Params.sizes }}
+              <option label="{{ $size }}" value="">{{ $size }}</option>
+              {{ end -}}
             </select>
           </div>
           <div class="quantity">
