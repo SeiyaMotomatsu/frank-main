@@ -260,7 +260,7 @@ nav li.login {
 .hotels_pics {
   height: 124px;
   width: 200px;
-  background: url("/img/hotel_sample.jpg") no-repeat center;
+  background: no-repeat center;
   background-size: cover;
 }
 

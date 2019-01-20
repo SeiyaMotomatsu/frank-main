@@ -85,7 +85,11 @@
             <h5>Color</h5>
             <select name="color" class="select_box" id="wear_color">
               {{ range $color := .Params.colors }}
-              <option label="{{ $color }}" value="">{{ $color }}</option>
+              <option
+                label="{{ $color }}"
+                value="{{ $color }}"
+                >{{ $color -}}</option
+              >
               {{ end -}}
             </select>
           </div>
@@ -93,13 +97,23 @@
             <h5>Size</h5>
             <select name="size" class="select_box" id="wear_size">
               {{ range $size := .Params.sizes }}
-              <option label="{{ $size }}" value="">{{ $size }}</option>
+              <option
+                label="{{ $size }}"
+                value="{{ $size }}"
+                >{{ $size -}}</option
+              >
               {{ end -}}
             </select>
           </div>
           <div class="quantity">
             <h5>Count</h5>
-            <input type="number" class="count" value="1" maxlength="5" />
+            <input
+              type="number"
+              id="wear_count"
+              class="count"
+              value="1"
+              maxlength="5"
+            />
           </div>
           <div class="wear_btn_wrap">
             <div class="wear_btn" id="rent_btn"><a href="#">RENT</a></div>
@@ -141,9 +155,14 @@
         .collection("wears")
         .doc("{{ .File.BaseFileName }}");
 
+      var color = $("#wear_color").val();
+      var size = $("#wear_size").val();
+      var count = Number($("#wear_count").val());
+
       wearRef.set({
-        color: "navy",
-        size: "L"
+        color, // color: color, のこと　今っぽい
+        size,
+        count
       });
     });
   });

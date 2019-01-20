@@ -1,0 +1,20 @@
+<div class="hotels">
+  <div
+    class="hotels_pics"
+    style="background-image: url('{{ .Params.Image }}')"
+  ></div>
+
+  <div class="di">
+    <!-- <p class="fukuoka">Fukuoka</p> -->
+    <p class="hotels_name">{{ .Params.Title }}</p>
+    <p class="access">{{ .Params.Access }}</p>
+  </div>
+  <div class="price">
+    <p class="reserve">Price</p>
+    <div>¥{{ .Params.price }}/1名</div>
+  </div>
+
+  <div class="reserve_btn_wrap">
+    <button class="reserve_btn">Reserve</button>
+  </div>
+</div>
