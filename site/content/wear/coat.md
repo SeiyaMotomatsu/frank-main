@@ -9,6 +9,11 @@ image3: /img/j1-3.jpg
 buy: "90,000"
 rent: "5,000"
 colors:
-  - aaa
-  - aaaa
+  - white
+  - navy
+  - black
+sizes:
+  - S
+  - M
+  - L
 ---

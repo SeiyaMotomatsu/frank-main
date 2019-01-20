@@ -7,6 +7,11 @@ image: /img/p1.jpg
 buy: "18,000"
 rent: "3,000"
 colors:
-  - aaa
-  - aaaa
+  - white
+  - navy
+  - black
+sizes:
+  - S
+  - M
+  - L
 ---

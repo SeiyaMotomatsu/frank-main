@@ -9,6 +9,11 @@ image3: /img/wool3.jpg
 buy: "100,000"
 rent: "10,000"
 colors:
-  - aaa
-  - aaaa
+  - white
+  - navy
+  - black
+sizes:
+  - S
+  - M
+  - L
 ---

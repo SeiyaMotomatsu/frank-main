@@ -9,6 +9,11 @@ image3: /img/jacket3.jpg
 buy: "23,000"
 rent: "3,000"
 colors:
-  - aaa
-  - aaaa
+  - white
+  - navy
+  - black
+sizes:
+  - S
+  - M
+  - L
 ---
