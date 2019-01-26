@@ -10,9 +10,12 @@
     href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700"
     rel="stylesheet"
   />
-
   <link
     href="https://fonts.googleapis.com/css?family=Roboto:300i,700i"
+    rel="stylesheet"
+  />
+  <link
+    href="https://cdn.jsdelivr.net/npm/modaal@0.4.4/dist/css/modaal.min.css"
     rel="stylesheet"
   />
 
@@ -45,21 +48,15 @@
   <meta property="og:image" content="/img/og-image.jpg" />
 
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
-  <!-- 追加 -->
-
   <script
     type="text/javascript"
     src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
     charset="utf-8"
   ></script>
-
   <script src="https://code.jquery.com/color/jquery.color-2.1.1.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/modaal@0.4.4/dist/js/modaal.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.js"></script>
-  <!-- <script type="text/javascript" src="slide.js"></script> -->
-
   <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
   <script>
     // Initialize Firebase
@@ -72,5 +69,46 @@
       messagingSenderId: "1081220709625"
     };
     firebase.initializeApp(config);
+
+    var db = firebase.firestore();
+    var settings = { timestampsInSnapshots: true };
+    db.settings(settings);
+
+    window.userId = "";
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        window.userId = user.uid;
+        $(".login").hide();
+        $("#cart").show();
+        // User is signed in.
+
+        var docRef = db.collection("users").doc(userId);
+        docRef.get().then(function(doc) {
+          if (doc.exists) {
+            var hotel = doc.data().hotel;
+            $("#cart_hotel_title").text(hotel.title);
+            $("#cart_hotel_price").text(hotel.price);
+
+            var wear = doc.data().wear;
+            $("#cart_wear_title").text(wear.title);
+            $("#cart_wear_rent").text(wear.rent);
+            $("#cart_wear_color").text(wear.color);
+            $("#cart_wear_size").text(wear.size);
+          }
+        });
+      } else {
+        // No user is signed in.
+      }
+    });
+
+    $(function() {
+      $("#cart").click(function(event) {
+        $(".cart_wrap").show();
+        event.stopPropagation();
+      });
+      $(window).click(function() {
+        $(".cart_wrap").hide();
+      });
+    });
   </script>
 </head>

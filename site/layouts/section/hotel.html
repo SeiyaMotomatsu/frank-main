@@ -9,15 +9,9 @@
 </div>
 
 <script>
-  var db = firebase.firestore();
-  var settings = { timestampsInSnapshots: true };
-  db.settings(settings);
-
   $(function() {
-    var userId = "";
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
-        userId = user.uid;
         // User is signed in.
       } else {
         $(".reserve_btn").css({ opacity: 0.3 });
@@ -26,15 +20,20 @@
     });
     $(".reserve_btn").click(function() {
       var current_id = $(this)[0].id.replace("reserve_btn-", "");
-      var hotelRef = db
-        .collection("users")
-        .doc(userId)
-        .collection("hotels")
-        .doc(current_id);
+      var current_title = $(this).data("title");
+      var current_price = $(this).data("price");
+      var userRef = db.collection("users").doc(userId);
 
-      hotelRef.set({
-        booked: true
-      });
+      userRef.set(
+        {
+          hotel: {
+            id: current_id,
+            title: current_title,
+            price: current_price
+          }
+        },
+        { merge: true }
+      );
     });
   });
 </script>

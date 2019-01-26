@@ -127,6 +127,61 @@ nav li.login {
   margin-left: auto;
 }
 
+.cart {
+  position: relative;
+}
+
+.cart_wrap {
+  position: absolute;
+  top: 100px;
+  left: -130px;
+  width: 250px;
+  height: 400px;
+  background: #eee;
+  color: #555;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.cart_wrap h1 {
+  font-size: 25px;
+}
+
+.cart_img {
+  width: 30px;
+  height: 30px;
+}
+
+.cart_hotel {
+  width: 200px;
+  height: 70px;
+  background: #ddd;
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+}
+
+.cart_hotel_box {
+  line-height: 5px;
+  padding-top: 20px;
+}
+
+.cart_wear {
+  width: 200px;
+  height: 250px;
+  background: #ddd;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+}
+
+.cart_wear_box {
+  line-height: 5px;
+  padding-top: 20px;
+}
+
 .toppic {
   width: 100%;
   height: 600px;

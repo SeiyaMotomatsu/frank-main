@@ -116,9 +116,11 @@
             />
           </div>
           <div class="wear_btn_wrap">
-            <div class="wear_btn" id="rent_btn"><a href="#">RENT</a></div>
-            <div class="wear_btn" id="buy_btn"><a href="">BUY</a></div>
+            <div class="wear_btn" id="rent_btn" href="#modaal">
+              <a href="#">RENT</a>
+            </div>
           </div>
+          <div id="modaal" style="display:none;"><p>RENTされました</p></div>
         </div>
       </div>
     </form>
@@ -126,15 +128,9 @@
 </div>
 
 <script>
-  var db = firebase.firestore();
-  var settings = { timestampsInSnapshots: true };
-  db.settings(settings);
-
   $(function() {
-    var userId = "";
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
-        userId = user.uid;
         // User is signed in.
       } else {
         $(".wear_btn").css({ opacity: 0.3 });
@@ -148,22 +144,12 @@
       $("#big_" + idNum).show();
     });
 
-    $("#rent_btn").click(function() {
-      var wearRef = db
-        .collection("users")
-        .doc(userId)
-        .collection("wears")
-        .doc("{{ .File.BaseFileName }}");
+    // $("#rent_btn").click(function() {
 
-      var color = $("#wear_color").val();
-      var size = $("#wear_size").val();
-      var count = Number($("#wear_count").val());
+    // });
 
-      wearRef.set({
-        color, // color: color, のこと　今っぽい
-        size,
-        count
-      });
+    $("#rent_btn").modaal({
+      width: 500
     });
   });
 </script>
