@@ -35,6 +35,13 @@
         { merge: true }
       );
     });
+
+    $(".reserve_btn").modaal({
+      width: 500,
+      after_close: function() {
+        location.reload();
+      }
+    });
   });
 </script>
 {{ end }}

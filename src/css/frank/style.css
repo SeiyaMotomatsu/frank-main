@@ -7,6 +7,10 @@ body {
   height: 100%;
 }
 
+a:focus {
+  box-shadow: none;
+}
+
 /* start.html */
 
 @keyframes fadeOut {
@@ -102,11 +106,11 @@ a:visited {
 }
 
 a:active {
-  color: #eee;
+  color: #aaa;
 }
 
 a:hover {
-  color: #eee;
+  color: #aaa;
 }
 
 nav ul {
@@ -128,6 +132,7 @@ nav li.login {
 }
 
 .cart {
+  z-index: 1;
   position: relative;
 }
 
@@ -155,7 +160,7 @@ nav li.login {
 .cart_hotel {
   width: 200px;
   height: 70px;
-  background: #ddd;
+  background: #fff;
   margin-top: 5px;
   margin-left: auto;
   margin-right: auto;
@@ -170,11 +175,17 @@ nav li.login {
 .cart_wear {
   width: 200px;
   height: 250px;
-  background: #ddd;
+  background: #fff;
   margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
   border-radius: 10px;
+}
+
+#cart_wear_image {
+  margin-top: 10px;
+  height: 100px;
+  width: 100px;
 }
 
 .cart_wear_box {
@@ -365,10 +376,12 @@ nav li.login {
 }
 
 .reserve_btn {
+  display: inline-block;
   margin-top: 40px;
   height: 50px;
   width: 100px;
   border: solid #eee;
+  line-height: 43px;
 }
 
 /* wear.html */

@@ -15,13 +15,15 @@
   </div>
 
   <div class="reserve_btn_wrap">
-    <button
+    <a
       id="reserve_btn-{{ .File.BaseFileName }}"
       data-price="{{ .Params.Price }}"
       data-title="{{ .Params.Title }}"
       class="reserve_btn"
+      href="#modaal"
     >
       Reserve
-    </button>
+    </a>
+    <div id="modaal" style="display:none;"><p>予約されました。</p></div>
   </div>
 </div>

@@ -144,12 +144,31 @@
       $("#big_" + idNum).show();
     });
 
-    // $("#rent_btn").click(function() {
-
-    // });
+    $("#rent_btn").click(function() {
+      var wearRef = db.collection("users").doc(userId);
+      var color = $("#wear_color").val();
+      var size = $("#wear_size").val();
+      var count = Number($("#wear_count").val());
+      wearRef.set(
+        {
+          wear: {
+            color, // color: color, のこと　今っぽい
+            size,
+            count,
+            title: "{{ .Params.title }}",
+            image: "{{ .Params.image }}",
+            rent: "{{ .Params.Rent }}"
+          }
+        },
+        { merge: true }
+      );
+    });
 
     $("#rent_btn").modaal({
-      width: 500
+      width: 500,
+      after_close: function() {
+        location.reload();
+      }
     });
   });
 </script>
